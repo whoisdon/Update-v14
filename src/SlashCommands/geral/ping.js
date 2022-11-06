@@ -6,7 +6,7 @@ module.exports =  {
     description: "Veja meu ping.", 
     type: Discord.ApplicationCommandType.ChatInput,
     
-    run: async (client, interaction) => {
+    run: async ({client, interaction}) => {
 
         let don = new EmbedBuilder() 
         .setColor("#36393e") // Cor invisivel

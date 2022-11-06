@@ -17,12 +17,12 @@ client.on("interactionCreate", async (interaction) => {
     }
     interaction.member = interaction.guild.members.cache.get(interaction.user.id);
 
-    cmd.run(client, interaction, args);
+    cmd.run({client, interaction, args});
   }
 
   if (interaction.isContextMenuCommand()) {
   //  await interaction.deferReply({ ephemeral: false }).catch((err) => { console.log(err) });
     const command = client.slashCommands.get(interaction.commandName);
-    if (command) command.run(client, interaction);
+    if (command) command.run({client, interaction});
   }
 });
